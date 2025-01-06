@@ -1,0 +1,243 @@
+/*font*/
+@font-face {
+  font-family: primaryFont;
+  src: url(Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: primaryBold;
+  src: url(Poppins-Bold.ttf);
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+body {
+  background-color: #10050B;
+  font-family: primaryFont;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 72px auto 100px;
+  color: White;
+}
+
+/*===================Nav Bar===================*/
+nav {
+  grid-column: span 12;
+  grid-row: 1;
+}
+
+.navbar {
+  background-color: #10050B !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.nav-link {
+  color: White !important;
+  margin: 0 10px;
+}
+
+/*active nav item*/
+.nav-link.active {
+  font-weight: bold;
+  color: orange !important;
+}
+
+/*underline effect for active nav item*/
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  top: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: orange;
+  box-shadow: 0px 0px 10px 1px orange;
+}
+
+.nav-link:hover {
+  color: orange !important;
+}
+
+nav img {
+  width: 40px;
+  height: 40px;
+}
+
+nav p {
+  margin: 0px;
+  font-size: 24px;
+}
+
+.container-fluid {
+  margin-left: 75px;
+  margin-right: 110px;
+}
+
+/*===================Main section===================*/
+section {
+  grid-column: span 12;
+  grid-row: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideUp 2.5s ease-out forwards;
+}
+
+.contact-container {
+  background: #000;
+  border-radius: 20px;
+  padding: 50px 100px;
+  width: 600px;
+  text-align: center;
+  margin-top: 50px;
+  box-shadow: 0 0 40px 3px orange;
+  animation: bombing 4s 2s ease-in-out infinite;
+}
+
+.contact-container p:nth-of-type(1) {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.contact-container p:nth-of-type(2) {
+  font-size: 20px;
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+form label {
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+form input,
+form textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+form input:focus,
+form textarea:focus {
+  box-shadow: 0 0 30px 1px orange;
+}
+
+form textarea {
+  resize: none;
+}
+
+form button {
+  background-color: orange; /* Pink button */
+  color: White;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 50px;
+  box-shadow: 0px 0px 10px 1px orange;
+  transition: background-color 1s ease;
+}
+
+button:hover {
+  background-color: #10050B;
+}
+
+/*content animation*/
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes bombing {
+  0% {
+    box-shadow: 0 0 40px 3px orange;
+  }
+  50% {
+    box-shadow: 0 0 5px 1px orange;
+  }
+  100% {
+    box-shadow: 0 0 40px 3px orange;
+  }
+}
+/*===================Footer===================*/
+footer {
+  grid-column: span 12;
+  grid-row: 3;
+  display: flex;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+}
+
+footer .social a {
+  margin-right: 20px;
+  transition: transform 4s;
+}
+
+footer .social i:hover {
+  transform: scale(1.7, 1.7);
+  border-radius: 50%;
+  background-color: orange;
+  box-shadow: 0px 0px 20px 2px orange;
+}
+
+footer .copyright {
+  color: rgb(211, 211, 211);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    text-align: center; /* Center content for mobile */
+  }
+  .navbar-toggler {
+    position: absolute;
+    right: 10px; /* Adjust position */
+    top: 20px;
+  }
+  .navbar-toggler-icon {
+    background-color: orange;
+  }
+  .navbar-collapse {
+    background-color: white; /* Dropdown menu background */
+    text-align: center;
+    z-index: 1;
+  }
+  .nav-link {
+    color: #10050B !important; /* Update link color for dropdown */
+    display: block; /* Stack links vertically */
+    margin: 10px 0;
+  }
+  /* Footer*/
+  footer {
+    font-size: 14px;
+    text-align: center;
+    gap: 5px;
+  }
+}/*# sourceMappingURL=contact.css.map */
